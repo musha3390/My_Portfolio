@@ -58,10 +58,10 @@ export default function Hero() {
             
             <div className="flex items-center gap-4 ml-4">
               <Link href="https://github.com/musha3390" target="_blank" className="p-2 rounded-full glass hover:bg-surface-border transition-colors">
-                <FaGithub size={18} />
+                <FaGithub size={22} />
               </Link>
               <Link href="https://www.linkedin.com/in/mushahid-raza-117095222/" target="_blank" className="p-2 rounded-full glass hover:bg-surface-border transition-colors">
-                <FaLinkedin size={18} />
+                <FaLinkedin size={22} />
               </Link>
             </div>
           </motion.div>

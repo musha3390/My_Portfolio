@@ -8,28 +8,36 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform built with Next.js, Stripe, and Prisma. Features include user authentication, product management, and a seamless checkout experience.",
+    title: "AI Starter Kit OSS",
+    description: "A comprehensive Next.js template integrated with OpenAI and Sanity CMS. Features robust text and content generation tools, multiple subscription plans, and API integrations perfect for developers building AI SaaS.",
+    image: "/ai-starterkit.png",
+    tags: ["Next.js", "Tailwind CSS", "Sanity CMS", "OpenAI"],
+    liveUrl: "https://ai-starterkit.netlify.app/",
+    githubUrl: "https://github.com/Mushahid3390/AI-staterkit-with-sanity"
+  },
+  {
+    title: "Free Blog Platform",
+    description: "A dynamic, full-featured blog application built from scratch. Integrates Prismic CMS for content management and headless data delivery, featuring custom slices, rich text articles, and a responsive reading experience.",
+    image: "/free-blog.png",
+    tags: ["Next.js", "React 19", "Tailwind CSS", "Prismic CMS"],
+    liveUrl: "https://free-blog-eight.vercel.app/",
+    githubUrl: "https://github.com/musha3390/Free-Blog.git"
+  },
+  {
+    title: "Multi-Step Onboarding Form",
+    description: "A complex, state-driven interactive multi-step form built from scratch. Implements detailed validation, smooth transitions, and state management across multiple screens for robust user onboarding and plan selection.",
+    image: "/multi-step.png",
+    tags: ["Next.js", "React 19", "SCSS"],
+    liveUrl: "https://multi-step-form-scss.vercel.app/",
+    githubUrl: "https://github.com/Mushahid3390/multi-step-form"
+  },
+  {
+    title: "Psycho Art Gallery",
+    description: "A visually striking digital art gallery application focused on modern, responsive aesthetics. Built using React and Vite, showcasing interactive UI elements and dynamic content presentation.",
     image: "/project-1.jpg",
-    tags: ["Next.js", "React", "Tailwind CSS", "Prisma", "Stripe"],
-    liveUrl: "#",
-    githubUrl: "#"
-  },
-  {
-    title: "Task Management App",
-    description: "A productivity app with real-time updates, drag-and-drop task organization, and team collaboration features.",
-    image: "/project-2.jpg",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#"
-  },
-  {
-    title: "Weather Dashboard",
-    description: "An interactive weather dashboard providing real-time forecasting data with beautiful visual representations using Chart.js.",
-    image: "/project-3.jpg",
-    tags: ["JavaScript", "API Integration", "Chart.js", "CSS3"],
-    liveUrl: "#",
-    githubUrl: "#"
+    tags: ["React", "Vite", "Tailwind CSS"],
+    liveUrl: "https://stg-psycho.vercel.app/",
+    githubUrl: "https://github.com/Mushahid3390/PsychoArt"
   }
 ];
 
@@ -63,6 +71,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

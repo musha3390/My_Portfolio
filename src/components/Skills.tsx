@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML/CSS"] },
-  { category: "Backend", items: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"] },
-  { category: "Tools & DevOps", items: ["Git", "Docker", "AWS", "Vercel", "Linux", "CI/CD"] },
-  { category: "Design", items: ["Figma", "UI/UX Principles", "Responsive Design", "Wireframing"] }
+  { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML/CSS","SaaS/Scss", "Redux Toolkit", "GSAP","Zustand", "React-Query/Tan-stack-Query", "React-Form-HooK","Formik"] },
+  { category: "Backend", items: ["Node.js", "Express","GraphQL", "Rest API", "PostgreSQL", "MongoDB"] },
+  { category: "Tools & DevOps", items: ["Git", "Vercel", "Netlify", "CI/CD"] },
+  { category: "Design", items: ["Figma", "UI/UX Principles", "Responsive Design"] }
 ];
 
 export default function Skills() {

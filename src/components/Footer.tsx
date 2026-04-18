@@ -15,19 +15,16 @@ export default function Footer() {
             Raza
           </Link>
           <p className="text-foreground/50 text-sm">
-            © {currentYear} Mushahid Raza. All rights reserved.
+            @ {currentYear} Mushahid Raza. All rights reserved.
           </p>
         </div>
 
         <div className="flex items-center gap-4">
-          <Link href="https://github.com" target="_blank" className="p-2 rounded-full hover:bg-surface-border text-foreground/70 hover:text-primary transition-colors">
+          <Link href="https://github.com/musha3390" target="_blank" className="p-2 rounded-full hover:bg-surface-border text-foreground/70 hover:text-primary transition-colors">
             <FaGithub size={20} />
           </Link>
-          <Link href="https://linkedin.com" target="_blank" className="p-2 rounded-full hover:bg-surface-border text-foreground/70 hover:text-primary transition-colors">
+          <Link href="https://www.linkedin.com/in/mushahid-raza-117095222/" target="_blank" className="p-2 rounded-full hover:bg-surface-border text-foreground/70 hover:text-primary transition-colors">
             <FaLinkedin size={20} />
-          </Link>
-          <Link href="https://twitter.com" target="_blank" className="p-2 rounded-full hover:bg-surface-border text-foreground/70 hover:text-primary transition-colors">
-            <FaTwitter size={20} />
           </Link>
         </div>
       </div>
