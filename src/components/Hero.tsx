@@ -7,11 +7,11 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section id="about" className="relative pt-16 pb-10 md:pt-24 md:pb-16 overflow-hidden min-h-screen flex items-center">
+    <section id="about" className="relative overflow-hidden min-h-screen flex md:items-center">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 pointer-events-none"/>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 pt-18 md:pt-32 relative z-10">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
