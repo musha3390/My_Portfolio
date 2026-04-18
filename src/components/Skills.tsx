@@ -13,7 +13,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute right-1/5 top-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/15 rounded-full blur-[100px] pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -45,7 +45,7 @@ export default function Skills() {
                 {skillGroup.items.map((item, i) => (
                   <span
                     key={i}
-                    className="px-4 py-2 rounded-lg bg-white/3  text-sm font-medium hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
+                    className="px-4 py-2 rounded-lg bg-white/8  text-sm font-medium hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
                   >
                     {item}
                   </span>

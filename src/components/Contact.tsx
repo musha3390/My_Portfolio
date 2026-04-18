@@ -6,10 +6,53 @@ import { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = { name: "", email: "", message: "" };
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+      isValid = false;
+    } else if (formData.name.length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+      isValid = false;
+    } else if (!nameRegex.test(formData.name)) {
+      newErrors.name = "Name can only contain letters and spaces";
+      isValid = false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+      isValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+      isValid = false;
+    } else if (formData.message.length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
 
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
      try{
         const res = await fetch('api/send-email',{
@@ -117,10 +160,14 @@ export default function Contact() {
                     id="name"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full  mt-2 md:3.5 bg-white/3 backdrop-blur-2xl border border-surface-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      if (errors.name) setErrors({ ...errors, name: "" });
+                    }}
+                    className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.name ? 'border-red-500/50' : 'border-surface-border'} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500/50' : 'focus:ring-primary'} transition-all`}
                     placeholder="Your Name"
                   />
+                  {errors.name && <p className="text-red-500 text-xs mt-1.5">{errors.name}</p>}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-foreground/80">Your Email</label>
@@ -129,10 +176,14 @@ export default function Contact() {
                     id="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full  mt-2 md:3.5 bg-white/3 backdrop-blur-2xl border border-surface-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      if (errors.email) setErrors({ ...errors, email: "" });
+                    }}
+                    className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.email ? 'border-red-500/50' : 'border-surface-border'} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500/50' : 'focus:ring-primary'} transition-all`}
                     placeholder="Email Address"
                   />
+                  {errors.email && <p className="text-red-500 text-xs mt-1.5">{errors.email}</p>}
                 </div>
               </div>
               
@@ -143,10 +194,14 @@ export default function Contact() {
                   required
                   rows={5}
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full mt-2 md:3.5 bg-white/3 backdrop-blur-2xl border border-surface-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
+                  onChange={(e) => {
+                    setFormData({ ...formData, message: e.target.value });
+                    if (errors.message) setErrors({ ...errors, message: "" });
+                  }}
+                  className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.message ? 'border-red-500/50' : 'border-surface-border'} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.message ? 'focus:ring-red-500/50' : 'focus:ring-primary'} transition-all resize-none`}
                   placeholder="How can I help you?"
                 ></textarea>
+                {errors.message && <p className="text-red-500 text-xs mt-1.5">{errors.message}</p>}
               </div>
               
               <button
