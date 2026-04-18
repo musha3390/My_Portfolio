@@ -64,9 +64,9 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
+              className="rounded-2xl bg-white/8 backdrop-blur-2xl  overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
             >
-              <div className="relative h-48 w-full bg-surface-border">
+              <div className="relative h-48 w-full">
                 <Image
                   src={project.image}
                   alt={project.title}

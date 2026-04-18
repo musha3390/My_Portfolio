@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 pointer-events-none"/>
       
-      <div className="container mx-auto px-6 pt-18 md:pt-32 relative z-10">
+      <div className="container mx-auto px-6 pt-32 relative z-10">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
