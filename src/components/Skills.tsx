@@ -12,9 +12,8 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute right-1/5 top-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/15 rounded-full blur-[100px] pointer-events-none" />
-      
+
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,10 +22,13 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="mb:10 md:mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold md:font-bold mb-4">Skills & Expertise</h2>
-          <div className="w-20 h-1 bg-linear-to-r from-primary to-secondary rounded-full mx-auto"></div>
+          <h2 className="text-3xl md:text-5xl font-semibold md:font-bold mb-4">
+            Skills & Expertise
+          </h2>
+          <div className="w-16 h-[3px] rounded-full mx-auto mt-4" style={{ backgroundColor: 'var(--primary)' }}></div>
           <p className="mt-6 text-foreground/70 max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and the tools I use to build robust applications.
+            A comprehensive overview of my technical skills and the tools I use
+            to build robust applications.
           </p>
         </motion.div>
 
@@ -40,7 +42,9 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="glass px-8 py-4 rounded-2xl"
             >
-              <h3 className="text-2xl font-bold mb-6 text-gradient inline-block">{skillGroup.category}</h3>
+              <h3 className="text-2xl font-bold mb-6 text-primary inline-block">
+                {skillGroup.category}
+              </h3>
               <div className="flex flex-wrap gap-3">
                 {skillGroup.items.map((item, i) => (
                   <span
@@ -54,6 +58,10 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
+        <p className="text-foreground/70 text-lg mb-8 text-center mt-10">
+          I specialize in developing scalable frontend applications using React,
+          Next.js, TypeScript, Redux Toolkit, TanStack Query, and Tailwind CSS.
+        </p>
       </div>
     </section>
   );

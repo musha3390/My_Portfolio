@@ -89,7 +89,9 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="mb-10 md:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold md:font-bold  mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-5xl font-semibold md:font-bold  mb-4">
+            Get In Touch
+          </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary to-secondary rounded-full"></div>
         </motion.div>
 
@@ -102,8 +104,12 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:w-1/3 space-y-8"
           >
+            <p className="text-foreground/70 text-lg mb-4">
+              {" "}
+              Looking for a Frontend Developer?
+            </p>
             <p className="text-foreground/70 text-lg mb-8">
-              I'm always open to discussing product design work or partnership opportunities.
+              I'm currently available for full-time opportunities, freelance projects, and collaborations.
             </p>
 
             <div className="flex items-start gap-4">
@@ -112,7 +118,10 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-bold text-lg mb-1">Email</h4>
-                <a href="mailto:mushahidr317@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">
+                <a
+                  href="mailto:mushahidr317@gmail.com"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                >
                   mushahidr317@gmail.com
                 </a>
               </div>
@@ -124,7 +133,10 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-bold text-lg mb-1">Phone</h4>
-                <a href="tel:+916386857244" className="text-foreground/70 hover:text-primary transition-colors">
+                <a
+                  href="tel:+916386857244"
+                  className="text-foreground/70 hover:text-primary transition-colors"
+                >
                   +91 6386857244
                 </a>
               </div>
@@ -154,7 +166,12 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-foreground/80">Your Name</label>
+                  <label
+                    htmlFor="name"
+                    className="text-sm font-medium text-foreground/80"
+                  >
+                    Your Name
+                  </label>
                   <input
                     type="text"
                     id="name"
@@ -164,13 +181,20 @@ export default function Contact() {
                       setFormData({ ...formData, name: e.target.value });
                       if (errors.name) setErrors({ ...errors, name: "" });
                     }}
-                    className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.name ? 'border-red-500/50' : 'border-surface-border'} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500/50' : 'focus:ring-primary'} transition-all`}
+                    className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.name ? "border-red-500/50" : "border-surface-border"} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.name ? "focus:ring-red-500/50" : "focus:ring-primary"} transition-all`}
                     placeholder="Your Name"
                   />
-                  {errors.name && <p className="text-red-500 text-xs mt-1.5">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="text-red-500 text-xs mt-1.5">{errors.name}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-foreground/80">Your Email</label>
+                  <label
+                    htmlFor="email"
+                    className="text-sm font-medium text-foreground/80"
+                  >
+                    Your Email
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -180,15 +204,24 @@ export default function Contact() {
                       setFormData({ ...formData, email: e.target.value });
                       if (errors.email) setErrors({ ...errors, email: "" });
                     }}
-                    className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.email ? 'border-red-500/50' : 'border-surface-border'} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500/50' : 'focus:ring-primary'} transition-all`}
+                    className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.email ? "border-red-500/50" : "border-surface-border"} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.email ? "focus:ring-red-500/50" : "focus:ring-primary"} transition-all`}
                     placeholder="Email Address"
                   />
-                  {errors.email && <p className="text-red-500 text-xs mt-1.5">{errors.email}</p>}
+                  {errors.email && (
+                    <p className="text-red-500 text-xs mt-1.5">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
               </div>
-              
+
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-foreground/80">Message</label>
+                <label
+                  htmlFor="message"
+                  className="text-sm font-medium text-foreground/80"
+                >
+                  Message
+                </label>
                 <textarea
                   id="message"
                   required
@@ -198,12 +231,16 @@ export default function Contact() {
                     setFormData({ ...formData, message: e.target.value });
                     if (errors.message) setErrors({ ...errors, message: "" });
                   }}
-                  className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.message ? 'border-red-500/50' : 'border-surface-border'} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.message ? 'focus:ring-red-500/50' : 'focus:ring-primary'} transition-all resize-none`}
+                  className={`w-full mt-2 md:mt-3.5 bg-white/8 backdrop-blur-2xl border ${errors.message ? "border-red-500/50" : "border-surface-border"} rounded-lg px-4 py-3 text-foreground focus:outline-none focus:ring-2 ${errors.message ? "focus:ring-red-500/50" : "focus:ring-primary"} transition-all resize-none`}
                   placeholder="How can I help you?"
                 ></textarea>
-                {errors.message && <p className="text-red-500 text-xs mt-1.5">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-500 text-xs mt-1.5">
+                    {errors.message}
+                  </p>
+                )}
               </div>
-              
+
               <button
                 type="submit"
                 disabled={isSubmitting}

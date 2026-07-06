@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mushahid Raza | Full Stack Developer",
-  description: "Personal portfolio showcasing my projects, skills, and experience in web development.",
+  title: "Mushahid Raza  | Frontend Developer | React, Next.js & TypeScript",
+  description:
+    "Personal portfolio showcasing my projects, skills, and experience in web development.",
 };
 
 export default function RootLayout({
