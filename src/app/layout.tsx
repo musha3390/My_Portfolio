@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Mushahid Raza Portfolio",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
 
     description: siteConfig.description,
 
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 
